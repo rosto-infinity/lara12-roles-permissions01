@@ -15,10 +15,10 @@ class PermissionController extends Controller
         return view('role-permission.permission.index');
     }
 
-    // public function create()
-    // {
-    //     return view('role-permission.permission.create');
-    // }
+    public function create()
+    {
+        return view('role-permission.permission.create');
+    }
 
     // public function store(Request $request)
     // {
