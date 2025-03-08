@@ -8,7 +8,8 @@ use App\Http\Controllers\PermissionController;
 
 
     Route::resource('permissions',  PermissionController::class);
-    Route::get('permissions/{permissionId}/delete',  PermissionController::class);
+    Route::get('permissions/{permissionId}/delete',  [PermissionController::class, 'destroy'])->name('permissions.destroy');
+    Route::get('permissions/{permissionId}/edit',  [PermissionController::class, 'edit'])->name('permissions.edit');
 
    
 
