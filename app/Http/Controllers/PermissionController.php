@@ -19,23 +19,22 @@ class PermissionController extends Controller
     {
         return view('role-permission.permission.create');
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => [
+                'required',
+                'string',
+                'unique:permissions,name'
+            ]
+        ]);
 
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => [
-    //             'required',
-    //             'string',
-    //             'unique:permissions,name'
-    //         ]
-    //     ]);
+        Permission::create([
+            'name' => $request->name
+        ]);
 
-    //     Permission::create([
-    //         'name' => $request->name
-    //     ]);
-
-    //     return redirect('permissions')->with('status','Permission Created Successfully');
-    // }
+        return redirect('permissions')->with('status','Permission Created Successfully');
+    }
 
     // public function edit(Permission $permission)
     // {

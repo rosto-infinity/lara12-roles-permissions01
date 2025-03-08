@@ -8,11 +8,16 @@
   <div class="container mx-auto mt-6">
     <div class="row">
       <div class="col-md-12">
+        @if (session('status'))
+      <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        {{ session('status') }}
+      </div>
+    @endif
 
         <div class="bg-white shadow-md rounded mt-3">
           <div class="px-4 py-2 border-b">
             <h4 class="flex justify-between items-center">
-             Permissions
+              Permissions
               <a href="{{ url('permissions/create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Add
                 Permission</a>
             </h4>
