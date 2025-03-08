@@ -59,11 +59,11 @@ class PermissionController extends Controller
     //     return redirect('permissions')->with('status','Permission Updated Successfully');
     // }
 
-    // public function destroy($permissionId)
-    // {
-    //     $permission = Permission::find($permissionId);
-    //     $permission->delete();
-    //     return redirect('permissions')->with('status','Permission Deleted Successfully');
-    // }
+    public function destroy($permissionId)
+    {
+        $permission = Permission::find($permissionId);
+        $permission->delete();
+        return redirect('permissions')->with('status','Permission Deleted Successfully');
+    }
 
 }
