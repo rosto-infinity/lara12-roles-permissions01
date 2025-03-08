@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
 
@@ -9,7 +10,8 @@ use App\Http\Controllers\PermissionController;
 
     Route::resource('permissions',  PermissionController::class);
     Route::get('permissions/{permissionId}/delete',  [PermissionController::class, 'destroy'])->name('permissions.destroy');
-    Route::get('permissions/{permissionId}/edit',  [PermissionController::class, 'edit'])->name('permissions.edit');
+    Route::resource('roles',  RoleController::class);
+    Route::get('roles/{roleId}/delete',  [RoleController::class, 'destroy'])->name('roles.destroy');
 
    
 

@@ -28,9 +28,9 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="container md:mx-auto md:mt-6 p-5">
                 {{ $slot }}
-            </main>
+            </mainclass>
         </div>
     </body>
 </html>

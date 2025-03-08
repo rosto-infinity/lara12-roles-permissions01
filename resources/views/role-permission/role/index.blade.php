@@ -33,14 +33,14 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($permissions as $permission)
+                @foreach ($roles as $role)
                 <tr class="text-center mt-2">
                     
-                  <td class="border-b py-3">{{ $permission->id }}</td>
-                  <td class="border-b">{{ $permission->name }}</td>
+                  <td class="border-b py-3">{{ $role->id }}</td>
+                  <td class="border-b">{{ $role->name }}</td>
                   <td class="border-b">
-                    <a href="{{ url('permissions/'.$permission->id. '/edit') }}" class="bg-green-500  text-white my-5 px-2 py-1 rounded">Edit</a>
-                    <a href="{{ url('permissions/'.$permission->id. '/delete') }}" class="bg-red-500 text-white px-2 py-1 rounded mx-2">Delete</a>
+                    <a href="{{ url('roles/'.$role->id. '/edit') }}" class="bg-green-500  text-white my-5 px-2 py-1 rounded">Edit</a>
+                    <a href="{{ url('roles/'.$role->id. '/delete') }}" class="bg-red-500 text-white px-2 py-1 rounded mx-2">Delete</a>
                   </td>
                   @endforeach
                 </tr>
