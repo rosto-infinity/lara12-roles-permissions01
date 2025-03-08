@@ -13,18 +13,18 @@
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
                   <div class="bg-gray-200 px-4 py-2">
                       <h4 class="font-bold text-lg">
-                          Edit Permission
-                          <a href="{{ url('permissions') }}" class="bg-red-500 text-white px-4 py-2 rounded float-right">Back</a>
+                          Edit Role
+                          <a href="{{ url('roles') }}" class="bg-red-500 text-white px-4 py-2 rounded float-right">Back</a>
                       </h4>
                   </div>
                   <div class="p-4">
-                      <form action="{{ url('permissions/'.$permission->id) }}" method="POST">
+                      <form action="{{ url('roles/'.$role->id) }}" method="POST">
                           @csrf
                           @method('PUT')
 
                           <div class="mb-3">
-                              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Permission Name</label>
-                              <input type="text" name="name" value="{{ $permission->name }}" class="form-control border border-gray-300 rounded p-2 w-full" />
+                              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Role Name</label>
+                              <input type="text" name="name" value="{{ $role->name }}" class="form-control border border-gray-300 rounded p-2 w-full" />
                           </div>
                           <div class="mb-3">
                               <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
