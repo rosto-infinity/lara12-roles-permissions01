@@ -1,5 +1,5 @@
 <x-app-layout>
- 
+  @include('role-permission.nav-links')
 <div class="container mx-auto mt-6">
     <div class="row">
       <div class="col-md-12">
