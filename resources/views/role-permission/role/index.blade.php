@@ -28,8 +28,8 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($roles as $role)
-                <tr class="text-center mt-2">
+                @foreach ($roles as $index => $role)
+                <tr class="text-center mt-2 {{ $index % 2 == 0 ? 'bg-gray-100' : 'bg-white' }}">
                     
                   <td class="border-b py-3">{{ $role->id }}</td>
                   <td class="border-b">{{ $role->name }}</td>
