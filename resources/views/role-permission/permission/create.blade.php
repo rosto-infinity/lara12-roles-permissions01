@@ -1,5 +1,5 @@
 <x-app-layout>
-
+ {{-- Code de creaion --}}
   <div class="container mx-auto mt-6">
     <div class="row">
       <div class="col-md-12">
