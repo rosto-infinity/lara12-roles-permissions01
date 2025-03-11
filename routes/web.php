@@ -7,7 +7,7 @@ use App\Http\Controllers\PermissionController;
 
 
 
-
+//resources pour roles; permissions
     Route::resource('permissions',  PermissionController::class);
     Route::get('permissions/{permissionId}/delete',  [PermissionController::class, 'destroy'])->name('permissions.destroy');
     
