@@ -16,7 +16,7 @@ class RoleController extends Controller
         $roles = Role::get();
         return view('role-permission.role.index', ['roles' => $roles]);
     }
-
+// create and store method role controller
     public function create()
     {
         return view('role-permission.role.create');
