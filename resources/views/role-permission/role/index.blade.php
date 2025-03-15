@@ -9,9 +9,9 @@
       </div>
     @endif
         <div class="bg-white shadow-md rounded mt-3 ">
-          <div class="px-4 py-2 border-b bg-green-100">
+          <div class="px-4 py-2 border-b bg-blue-200">
             <h4 class="flex justify-between items-center">
-              <span class="text-2xl  text-green-500">Roles</span>
+              <span class="text-2xl  text-black">Roles</span>
               <a href="{{ url('roles/create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Add
                 Role</a>
             </h4>

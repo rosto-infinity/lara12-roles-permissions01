@@ -11,10 +11,10 @@
     @endif
 
         <div class="bg-white shadow-md rounded mt-3">
-          <div class="px-4 py-2 border-b">
+          <div class="px-4 py-2 border-b bg-teal-200">
             <h4 class="flex justify-between items-center">
               Permissions
-              <a href="{{ url('permissions/create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Add
+              <a href="{{ url('permissions/create') }}" class="bg-teal-500 text-white px-4 py-2 rounded">Add
                 Permission</a>
             </h4>
           </div>
