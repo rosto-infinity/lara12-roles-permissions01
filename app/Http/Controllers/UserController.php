@@ -10,10 +10,14 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     // index method
-    public function index()
+    public function index(Request $request)
     {
         // get all users
-        $users = User::get();
+        // $users = User::get();
+        $search = $request->input('search');
+        $users = User::when($search, function ($query, $search) {
+            return $query->where('email', 'like', "%{$search}%");
+        })->get();
         return view('role-permission.user.index', ['users' => $users]);
     }
 // create and store method
