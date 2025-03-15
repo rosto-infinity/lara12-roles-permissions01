@@ -20,6 +20,8 @@ use App\Http\Controllers\UserController;
     
     //resources pour users
     Route::resource('users',  UserController::class);
+    //route pour delete user
+    Route::get('users/{user}/delete',  [UserController::class, 'destroy'])->name('users.destroy');
    
 
 Route::get('/', function () {
