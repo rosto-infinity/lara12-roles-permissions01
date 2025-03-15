@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 class RoleController extends Controller
 {
-   
+   // index method role controller
     public function index()
     {
         $roles = Role::get();
