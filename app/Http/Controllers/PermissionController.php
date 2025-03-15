@@ -8,7 +8,7 @@ use Spatie\Permission\Models\Permission;
 class PermissionController extends Controller
 {
    
-
+// index method permission controller
     public function index()
     {
         $permissions = Permission::get();
