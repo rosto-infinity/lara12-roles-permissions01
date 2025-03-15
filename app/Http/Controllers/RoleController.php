@@ -38,7 +38,7 @@ class RoleController extends Controller
 
         return redirect('roles')->with('status','Role Created Successfully');
     }
-
+// edit and update method role controller
     public function edit(Role $role)
     {
         return view('role-permission.role.edit',[
