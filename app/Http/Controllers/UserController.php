@@ -48,6 +48,7 @@ class UserController extends Controller
     {
         // get all roles
         // get user roles
+        // return view with user, roles and userRoles
         
         $roles = Role::pluck('name','name')->all();
         $userRoles = $user->roles->pluck('name','name')->all();
