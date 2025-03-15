@@ -31,7 +31,8 @@
                                         <input
                                             type="checkbox"
                                             name="permission[]"
-                                            value="{{ $permission->name}}"
+                                            value="{{ $permission->name}}                                
+                                            {{ in_array($permission->id, $rolePermissions) ? 'checked' : '' }}
                                             class="form-checkbox h-4 w-4 text-blue-600"
                                             />
 

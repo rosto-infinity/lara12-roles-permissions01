@@ -73,12 +73,14 @@ class RoleController extends Controller
     {
         $permissions = Permission::get();
         $role = Role::findOrFail($roleId);
+        $rolePermissions = DB::table("role_has_permissions")
+            ->where("role_has_permissions.role_id",$role->id)
+            ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
+            ->all();
         return view('role-permission.role.add-permissions', [
             'role' => $role,
             'permissions' => $permissions,
-            $rolePermissions = DB::table("role_has_permissions")->where("role_has_permissions.role_id",$roleId)
-            ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
-            ->all()
+            'rolePermissions' => $rolePermissions      
         ]);
     }
     public function givePermissionToRole(Request $request, $roleId)
