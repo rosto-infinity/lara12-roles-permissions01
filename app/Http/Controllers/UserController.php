@@ -40,7 +40,7 @@ class UserController extends Controller
 
         return redirect('/users')->with('status','User created successfully with roles');
     }
-
+// edit and update method
     public function edit(User $user)
     {
         $roles = Role::pluck('name','name')->all();
