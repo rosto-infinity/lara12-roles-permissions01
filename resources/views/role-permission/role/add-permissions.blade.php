@@ -1,13 +1,13 @@
 <x-app-layout>
   <div class="container mx-auto mt-5">
       <div class="row">
-          <div class="col-md-12">
+          <div class="mb-3 col-md-12 ">
             @if (session('status'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
               {{ session('status') }}
             </div>
           @endif
-              <div class="bg-white shadow-md rounded-lg overflow-hidden">
+              <div class="bg-white shadow-md rounded-lg overflow-hidden mt-3">
                   <div class="bg-gray-200 px-4 py-2">
                       <h4 class="font-bold text-lg flex items-center justify-between">
                          Role : {{ $role->name }}
