@@ -14,7 +14,6 @@ use App\Http\Controllers\PermissionController;
     Route::resource('roles',  RoleController::class);
     Route::get('roles/{roleId}/delete',  [RoleController::class, 'destroy'])->name('roles.destroy');
 
-   
 
 
 

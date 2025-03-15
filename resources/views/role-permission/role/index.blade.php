@@ -8,7 +8,6 @@
         {{ session('status') }}
       </div>
     @endif
-
         <div class="bg-white shadow-md rounded mt-3">
           <div class="px-4 py-2 border-b">
             <h4 class="flex justify-between items-center">

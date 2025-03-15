@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
-
 class RoleController extends Controller
 {
    
@@ -70,7 +69,6 @@ class RoleController extends Controller
         $role->delete();
         return redirect('roles')->with('status','Role Deleted Successfully');
     }
-
     public function addPermissionToRole($roleId)
     {
         $permissions = Permission::get();

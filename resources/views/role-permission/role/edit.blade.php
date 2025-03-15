@@ -9,7 +9,6 @@
                   @endforeach
               </ul>
               @endif
-
               <div class="bg-white shadow-md rounded-lg overflow-hidden">
                   <div class="bg-gray-200 px-4 py-2">
                       <h4 class="font-bold text-lg">
@@ -36,4 +35,3 @@
       </div>
   </div>
 </x-app-layout>
-
