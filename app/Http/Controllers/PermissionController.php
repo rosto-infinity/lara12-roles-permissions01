@@ -36,7 +36,7 @@ class PermissionController extends Controller
 
         return redirect('permissions')->with('status','Permission Created Successfully');
     }
-
+// edit and update method permission controller
     public function edit(Permission $permission)
     {
         return view('role-permission.permission.edit', ['permission' => $permission]);
