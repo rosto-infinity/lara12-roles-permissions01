@@ -67,7 +67,8 @@ class UserController extends Controller
             'password' => 'nullable|string|min:8|max:20',
             'roles' => 'required'
         ]);
-
+// update user
+// sync roles
         $data = [
             'name' => $request->name,
             'email' => $request->email,
