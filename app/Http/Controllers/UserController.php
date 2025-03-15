@@ -76,7 +76,7 @@ class UserController extends Controller
 
         return redirect('/users')->with('status','User Updated Successfully with roles');
     }
-
+// delete method
     public function destroy($userId)
     {
         $user = User::findOrFail($userId);
