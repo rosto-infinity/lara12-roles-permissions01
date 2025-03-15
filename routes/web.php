@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
-
-
+use App\Http\Controllers\UserController;
 
 //resources pour roles; permissions
     Route::resource('permissions',  PermissionController::class);
@@ -19,7 +18,8 @@ use App\Http\Controllers\PermissionController;
     // Route::post('roles/{roleId}/give-permissions',   [RoleController::class, 'storePermissionToRole'])->name('roles.storePermissionToRole');
     // Route::get('roles/{roleId}/revoke-permissions',   [RoleController::class, 'removePermissionFromRole'])->name('roles.removePermissionFromRole');
 
-
+    Route::resource('users',  UserController::class);
+   
 
 Route::get('/', function () {
     
