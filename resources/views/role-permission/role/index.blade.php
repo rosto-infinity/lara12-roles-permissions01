@@ -29,10 +29,10 @@
               <tbody>
                 @foreach ($roles as $index => $role)
                 <tr class="text-center mt-2 {{ $index % 2 == 0 ? 'bg-gray-100' : 'bg-white' }}">
-                    
                   <td class="border-b py-3">{{ $role->id }}</td>
                   <td class="border-b">{{ $role->name }}</td>
                   <td class="border-b">
+                    <a href="{{ url('roles/'.$role->id. '/give-permission') }}" class="bg-green-500  text-white my-5 px-2 py-1 rounded">Add / Edit Role Permission</a>
                     <a href="{{ url('roles/'.$role->id. '/edit') }}" class="bg-green-500  text-white my-5 px-2 py-1 rounded">Edit</a>
                     <a href="{{ url('roles/'.$role->id. '/delete') }}" class="bg-red-500 text-white px-2 py-1 rounded mx-2">Delete</a>
                   </td>

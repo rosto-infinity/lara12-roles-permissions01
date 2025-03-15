@@ -84,7 +84,6 @@ class RoleController extends Controller
             'rolePermissions' => $rolePermissions
         ]);
     }
-
     public function givePermissionToRole(Request $request, $roleId)
     {
         $request->validate([
