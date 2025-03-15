@@ -61,6 +61,7 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+        // validate the request
         $request->validate([
             'name' => 'required|string|max:255',
             'password' => 'nullable|string|min:8|max:20',
