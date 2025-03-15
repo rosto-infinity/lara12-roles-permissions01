@@ -13,10 +13,10 @@
               <div class="px-4 py-2 border-b bg-orange-200">
                 <h4 class="flex justify-between items-center">
                   <span class="text-2xl  text-black">Users</span>
-                  {{-- @can('create user')  --}}
+
                   <a href="{{ url('users/create') }}" class="bg-orange-500 text-white px-4 py-2 rounded">Add
                     User</a>
-                  {{-- @endcan --}}
+
                 </h4>
               </div>
               <div class="p-4">
@@ -45,13 +45,11 @@
                                   @endif
                               </td>
                               <td class="border border-gray-300 px-4 py-2">
-                                  @can('update user')
-                                  <a href="{{ url('users/'.$user->id.'/edit') }}" class="bg-green-500 text-white px-4 py-2 rounded">Edit</a>
-                                  @endcan
 
-                                  @can('delete user')
+                                  <a href="{{ url('users/'.$user->id.'/edit') }}" class="bg-green-500 text-white px-4 py-2 rounded">Edit</a>
+  
                                   <a href="{{ url('users/'.$user->id.'/delete') }}" class="bg-red-500 text-white px-4 py-2 rounded mx-2">Delete</a>
-                                  @endcan
+                                
                               </td>
                           </tr>
                           @endforeach
