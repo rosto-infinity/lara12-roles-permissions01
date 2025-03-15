@@ -47,6 +47,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         // get all roles
+        // get user roles
         
         $roles = Role::pluck('name','name')->all();
         $userRoles = $user->roles->pluck('name','name')->all();
