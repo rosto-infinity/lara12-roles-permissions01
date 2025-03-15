@@ -38,7 +38,7 @@ class UserController extends Controller
                         'email' => $request->email,
                         'password' => Hash::make($request->password),
                     ]);
-
+// sync roles
         $user->syncRoles($request->roles);
 
         return redirect('/users')->with('status','User created successfully with roles');
