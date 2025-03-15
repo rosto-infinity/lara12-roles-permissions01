@@ -25,6 +25,7 @@
     <div class="flex items-center">
       <input type="text" name="search" placeholder="Search permissions..." class="border border-gray-300 rounded-md p-2 w-full" value="{{ request('search') }}">
       <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded ml-2">Search</button>
+      <a href="{{ url('permissions') }}" class="bg-gray-500 text-white px-4 py-2 rounded ml-2">Refresh</a>
     </div>
   </form>
               {{-- Tableau des permissions --}}
