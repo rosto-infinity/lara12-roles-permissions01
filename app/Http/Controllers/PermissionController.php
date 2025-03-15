@@ -9,9 +9,14 @@ class PermissionController extends Controller
 {
    
 // index method permission controller
-    public function index()
+    public function index(Request $request)
     {
-        $permissions = Permission::get();
+        
+        $search = $request->input('search');
+        $permissions = Permission::when($search, function ($query, $search) {
+            return $query->where('name', 'like', "%{$search}%");
+        })->get();
+
         return view('role-permission.permission.index', ['permissions' => $permissions]);
     }
 // create and store method permission controller
