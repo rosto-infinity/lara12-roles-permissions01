@@ -30,11 +30,14 @@
                                         <input
                                             type="checkbox"
                                             name="permission[]"
-                                            value="{{ $permission->name }}"
+                                            value="{{ $permission->id }}"
                                             class="form-checkbox h-4 w-4 text-blue-600"
-                                            {{-- {{ in_array($permission->id, $rolePermissions) ? 'checked':'' }} --}}
-                                        />
-                                        <span class="ml-2 text-gray-700">{{ $permission->name }}</span>
+                                            />
+
+                                        <span class="ml-2 text-gray-700">
+                                            {{ $permission->name }}
+                                        </span>
+                                        
                                     </label>
                                 </div>
                                 @endforeach
