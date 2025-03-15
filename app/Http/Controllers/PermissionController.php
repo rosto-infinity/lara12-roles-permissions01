@@ -14,7 +14,7 @@ class PermissionController extends Controller
         $permissions = Permission::get();
         return view('role-permission.permission.index', ['permissions' => $permissions]);
     }
-
+// create and store method permission controller
     public function create()
     {
        
