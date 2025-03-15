@@ -14,7 +14,7 @@ class UserController extends Controller
         $users = User::get();
         return view('role-permission.user.index', ['users' => $users]);
     }
-
+// create and store method
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
