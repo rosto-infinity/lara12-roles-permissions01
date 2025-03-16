@@ -5,6 +5,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
+// Route::group(['middleware'=> ['role:super-admin|admin']], function () {
 Route::group(['middleware'=> ['isAdmin']], function () {
     // role:super-admin|admin
     //auth
