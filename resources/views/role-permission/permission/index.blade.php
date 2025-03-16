@@ -49,9 +49,12 @@
                       <td class="border-b py-3">{{ $permission->id }}</td>
                       <td class="border-b">{{ $permission->name }}</td>
                       <td class="border-b">
-                        
+
                           {{-- Lien pour éditer la permission --}}
+                          @can('update permission')
                           <a href="{{ url('permissions/'.$permission->id. '/edit') }}" class="bg-green-500 text-white my-5 px-2 py-1 rounded">Edit</a>
+                          @endcan
+                          
                           {{-- Lien pour supprimer la permission --}}
                           <a href="{{ url('permissions/'.$permission->id. '/delete') }}" class="bg-red-500 text-white px-2 py-1 rounded mx-2">Delete</a>
                       </td>
