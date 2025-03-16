@@ -6,23 +6,24 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 
-//resources pour roles; permissions
-    Route::resource('permissions',  PermissionController::class);
-    Route::get('permissions/{permissionId}/delete',  [PermissionController::class, 'destroy'])->name('permissions.destroy');
+Route::group(['middleware'=> 'auth'], function () {
     
     //resources pour roles; permissions
-    Route::resource('roles',  RoleController::class);
-    Route::get('roles/{roleId}/delete',  [RoleController::class, 'destroy'])->name('roles.destroy');
-    Route::get('roles/{roleId}/give-permissions',   [RoleController::class, 'addPermissionToRole'])->name('roles.addPermissionToRole');
-    
-   
-    Route::put('roles/{roleId}/give-permissions',   [RoleController::class, 'givePermissionToRole'])->name('give.addPermissionToRole');
-    
-    //resources pour users
-    Route::resource('users',  UserController::class);
-    //route pour delete user
-    Route::get('users/{user}/delete',  [UserController::class, 'destroy'])->name('users.destroy');
-   
+        Route::resource('permissions',  PermissionController::class);
+        Route::get('permissions/{permissionId}/delete',  [PermissionController::class, 'destroy'])->name('permissions.destroy');
+        
+        //resources pour roles; permissions
+        Route::resource('roles',  RoleController::class);
+        Route::get('roles/{roleId}/delete',  [RoleController::class, 'destroy'])->name('roles.destroy');
+        Route::get('roles/{roleId}/give-permissions',   [RoleController::class, 'addPermissionToRole'])->name('roles.addPermissionToRole');
+        Route::put('roles/{roleId}/give-permissions',   [RoleController::class, 'givePermissionToRole'])->name('give.addPermissionToRole');
+        
+        //resources pour users
+        Route::resource('users',  UserController::class);
+        //route pour delete user
+        Route::get('users/{user}/delete',  [UserController::class, 'destroy'])->name('users.destroy');
+       
+});
 
 Route::get('/', function () {
     
