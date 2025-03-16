@@ -4,10 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
-
-class PermissionController extends Controller
+use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Spatie\Permission\Middleware\PermissionMiddleware;
+ 
+class PermissionController extends Controller implements HasMiddleware
 {
-   
+    public static function middleware()
+    {
+        return [ 
+            new Middleware(
+                PermissionMiddleware::using('view permission'),
+                 ['view']
+            ),       
+            new Middleware(
+                PermissionMiddleware::using('create permission'),
+                ['create', 'store']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('update permission'),
+                only: ['update', 'edit']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('delete permission'),
+                ['destroy']
+            ),  
+        ];
+    }
 // index method permission controller
     public function index(Request $request)
     {

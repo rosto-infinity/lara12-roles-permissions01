@@ -18,12 +18,24 @@ class RoleController extends Controller implements HasMiddleware
     public static function middleware()
     {
         return [
-            // Appliquer le middleware 'permission:delete role' uniquement sur la méthode destroy
             new Middleware(
-                PermissionMiddleware::using('permission:delete role'),
-            ['destroy']
+                PermissionMiddleware::using('view role'),
+                 ['index', 'show']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('delete role'),
+                ['destroy']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('update role'),
+                ['update', 'edit']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('create role'),
+                ['create', 'store','addPermissionToRole','givePermissionToRole']
             ),
         ];
+    
     }
    // index method role controller
     public function index()
