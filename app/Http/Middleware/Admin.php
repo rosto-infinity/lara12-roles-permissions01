@@ -16,6 +16,7 @@ class Admin
    */
   public function handle(Request $request, Closure $next): Response
   {
+    //Auth
     if (Auth::check()) {
 
       $user = Auth::user();
