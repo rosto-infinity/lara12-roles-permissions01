@@ -13,30 +13,30 @@ use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Spatie\Permission\Middleware\PermissionMiddleware;
  
-class RoleController extends Controller
+class RoleController extends Controller implements HasMiddleware
 {
-    // public static function middleware()
-    // {
-    //     return [
-    //         new Middleware(
-    //             PermissionMiddleware::using('view role'),
-    //              ['index', 'show']
-    //         ),
-    //         new Middleware(
-    //             PermissionMiddleware::using('delete role'),
-    //             ['destroy']
-    //         ),
-    //         new Middleware(
-    //             PermissionMiddleware::using('update role'),
-    //             ['update', 'edit']
-    //         ),
-    //         new Middleware(
-    //             PermissionMiddleware::using('create role'),
-    //             ['create', 'store','addPermissionToRole','givePermissionToRole']
-    //         ),
-    //     ];
+    public static function middleware()
+    {
+        return [
+            new Middleware(
+                PermissionMiddleware::using('view role'),
+                 ['index', 'show']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('delete role'),
+                ['destroy']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('update role'),
+                ['update', 'edit']
+            ),
+            new Middleware(
+                PermissionMiddleware::using('create role'),
+                ['create', 'store','addPermissionToRole','givePermissionToRole']
+            ),
+        ];
     
-    // }
+    }
    // index method role controller
     public function index()
     {

@@ -11,32 +11,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Spatie\Permission\Middleware\PermissionMiddleware;
-class UserController extends Controller 
+class UserController extends Controller implements HasMiddleware
 {
    
    
-//     public static function middleware()
-//     {
-//         return [ 
-//     new Middleware(
-//         PermissionMiddleware::using('view user'),
-//          ['view']
-//     ),
-//     new Middleware(
-//         PermissionMiddleware::using('delete user'),
-//          ['destroy']
-//     ),
-//     new Middleware(
-//         PermissionMiddleware::using('update user'),
-//         ['update', 'edit']
-//     ),
-//     new Middleware(
-//         PermissionMiddleware::using('create user'),
-//         ['create', 'store']
-//     ),
-// ];
+    public static function middleware()
+    {
+        return [ 
+    new Middleware(
+        PermissionMiddleware::using('view user'),
+         ['view']
+    ),
+    new Middleware(
+        PermissionMiddleware::using('delete user'),
+         ['destroy']
+    ),
+    new Middleware(
+        PermissionMiddleware::using('update user'),
+        ['update', 'edit']
+    ),
+    new Middleware(
+        PermissionMiddleware::using('create user'),
+        ['create', 'store']
+    ),
+];
 
-// }
+}
     
     // index method
     public function index(Request $request)
