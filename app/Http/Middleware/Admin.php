@@ -18,7 +18,7 @@ class Admin
   {
     //Auth
     if (Auth::check()) {
-
+   //uer
       $user = Auth::user();
 
         if ($user->hasRole(['super-admin', 'admin'])) {
