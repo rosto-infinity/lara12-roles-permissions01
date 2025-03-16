@@ -7,14 +7,17 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 
 Route::group(['middleware'=> ['role:super-admin|admin']], function () {
-    // role:super-admin
+    // role:super-admin|admin
+    //auth
     //resources pour roles; permissions
         Route::resource('permissions',  PermissionController::class);
         Route::get('permissions/{permissionId}/delete',  [PermissionController::class, 'destroy'])->name('permissions.destroy');
         
         //resources pour roles; permissions
         Route::resource('roles',  RoleController::class);
-        Route::get('roles/{roleId}/delete',  [RoleController::class, 'destroy'])->name('roles.destroy');
+        Route::get('roles/{roleId}/delete',  [RoleController::class, 'destroy'])
+        ->middleware('permission:delete role')
+        ->name('roles.destroy');
         Route::get('roles/{roleId}/give-permissions',   [RoleController::class, 'addPermissionToRole'])->name('roles.addPermissionToRole');
         Route::put('roles/{roleId}/give-permissions',   [RoleController::class, 'givePermissionToRole'])->name('give.addPermissionToRole');
         
