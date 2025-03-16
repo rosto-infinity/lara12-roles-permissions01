@@ -9,22 +9,22 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Admin
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next): Response
-    {
-        if (Auth::user()->usertype != 'admin') {
+  /**
+   * Handle an incoming request.
+   *
+   * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+   */
+  public function handle(Request $request, Closure $next): Response
+  {
+    if (Auth::check()) {
 
       $user = Auth::user();
 
-      if($user->hasRole([])){
-        
-      }
-        }
- 
+      if ($user->hasRole(['role:super-admin', 'admin'])) {
         return $next($request);
+      }
+      abort(403);
     }
+    abort(401);
+  }
 }
