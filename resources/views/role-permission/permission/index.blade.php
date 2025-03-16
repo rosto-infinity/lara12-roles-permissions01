@@ -56,8 +56,10 @@
                           @endcan
                           
                           {{-- Lien pour supprimer la permission --}}
+                          @can('update permission')
                           <a href="{{ url('permissions/'.$permission->id. '/delete') }}" class="bg-red-500 text-white px-2 py-1 rounded mx-2">Delete</a>
-                      </td>
+                          @endcan
+                        </td>
                   </tr>
                   @endforeach
                 </tbody>
