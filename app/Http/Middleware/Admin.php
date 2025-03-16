@@ -23,7 +23,7 @@ class Admin
       if ($user->hasRole(['role:super-admin', 'admin'])) {
         return $next($request);
       }
-      abort(403);
+      abort(403, "User does not have correct Role");
     }
     abort(401);
   }
