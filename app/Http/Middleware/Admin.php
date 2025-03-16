@@ -1,5 +1,5 @@
 <?php
-
+//Creation de middleware Admin manuelle pour laravel 12
 namespace App\Http\Middleware;
 
 use Closure;
