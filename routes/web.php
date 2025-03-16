@@ -6,8 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 
-Route::group(['middleware'=> 'auth'], function () {
-    
+Route::group(['middleware'=> ['role:super-admin|admin']], function () {
+    // role:super-admin
     //resources pour roles; permissions
         Route::resource('permissions',  PermissionController::class);
         Route::get('permissions/{permissionId}/delete',  [PermissionController::class, 'destroy'])->name('permissions.destroy');
