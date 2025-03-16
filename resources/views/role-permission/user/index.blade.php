@@ -52,17 +52,18 @@
                                   @endif
                               </td>
                               <td class="border border-gray-300 px-4 py-2">
-
+                                @can('update user')
                                   <a href="{{ url('users/'.$user->id.'/edit') }}" class="bg-green-500 text-white px-4 py-2 rounded">Edit</a>
-  
+                                  @endcan
+
+                                  @can('delete user')
                                   <a href="{{ url('users/'.$user->id.'/delete') }}" class="bg-red-500 text-white px-4 py-2 rounded mx-2">Delete</a>
-                                
+                                 @endcan
                               </td>
                           </tr>
                           @endforeach
                       </tbody>
                   </table>
-
               </div>
           </div>
       </div>
