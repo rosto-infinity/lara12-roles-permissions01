@@ -35,12 +35,20 @@
                   <td class="border-b py-3">{{ $role->id }}</td>
                   <td class="border-b">{{ $role->name }}</td>
                   <td class="border-b">
+                    @can('update addPermissionToRole')
                     {{-- Lien pour ajouter/éditer les permissions du rôle --}}
                     <a href="{{ url('roles/'.$role->id. '/give-permissions') }}" class="bg-orange-400 text-white my-5 px-2 py-1.5 rounded">Add / Edit Role Permission</a>
+                    @endcan
+
                     {{-- Lien pour éditer le rôle --}}
+                    @can('update role')
                     <a href="{{ url('roles/'.$role->id. '/edit') }}" class="bg-green-500 text-white my-5 px-2 py-1.5 rounded">Edit</a>
+                    @endcan
+
                     {{-- Lien pour supprimer le rôle --}}
+                    @can('delete role')
                     <a href="{{ url('roles/'.$role->id. '/delete') }}" class="bg-red-500 text-white px-2 py-1.5 rounded mx-2">Delete</a>
+                   @endcan
                   </td>
                 </tr>
                 @endforeach
