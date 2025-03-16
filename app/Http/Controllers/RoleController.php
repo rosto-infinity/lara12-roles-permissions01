@@ -2,14 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
-class RoleController extends Controller
+
+use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Spatie\Permission\Middleware\PermissionMiddleware;
+ 
+class RoleController extends Controller implements HasMiddleware
 {
+    public static function middleware()
+    {
+        return [
+            // Appliquer le middleware 'permission:delete role' uniquement sur la méthode destroy
+            new Middleware(
+                PermissionMiddleware::using('permission:delete role'),
+            ['destroy']
+            ),
+        ];
+    }
    // index method role controller
     public function index()
     {
