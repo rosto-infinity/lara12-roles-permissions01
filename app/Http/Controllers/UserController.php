@@ -65,13 +65,13 @@ class UserController extends Controller implements HasMiddleware
             'password' => 'required|string|min:8|max:20',
             'roles' => 'required'
         ]);
-      // create user
+      // 13create user
         $user = User::create([
                         'name' => $request->name,
                         'email' => $request->email,
                         'password' => Hash::make($request->password),
                     ]);
-// sync roles
+// 14sync roles
         $user->syncRoles($request->roles);
 
         return redirect('/users')->with('status','User created successfully with roles');
