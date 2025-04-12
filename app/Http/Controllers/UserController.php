@@ -81,7 +81,7 @@ class UserController extends Controller implements HasMiddleware
     {
         // 17--get all roles
         // 18-get user roles
-        // return view with user, roles and userRoles
+        // 19-return view with user, roles and userRoles
         
         $roles = Role::pluck('name','name')->all();
         $userRoles = $user->roles->pluck('name','name')->all();
