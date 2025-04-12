@@ -58,7 +58,7 @@ class UserController extends Controller implements HasMiddleware
 
     public function store(Request $request)
     {
-        // 11validate the request
+        // 11-validate the request
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email',
