@@ -89,7 +89,7 @@ class RoleController extends Controller implements HasMiddleware
 
         return redirect('roles')->with('status','Role Updated Successfully');
     }
-// destroy method role controller
+// 6destroy method role controller
     public function destroy($roleId)
     {
         $role = Role::find($roleId);

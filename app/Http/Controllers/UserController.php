@@ -38,7 +38,7 @@ class UserController extends Controller implements HasMiddleware
 
 }
     
-    // index method
+    // 7index method
     public function index(Request $request)
     {
         // get all users
