@@ -53,7 +53,7 @@ class LoginRequest extends FormRequest
     }
 
     /**
-     * 32Ensure the login request is not rate limited.
+     * 32- the login request is not rate limited.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
