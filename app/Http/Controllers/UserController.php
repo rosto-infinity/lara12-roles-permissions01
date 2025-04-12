@@ -100,7 +100,7 @@ class UserController extends Controller implements HasMiddleware
             'password' => 'nullable|string|min:8|max:20',
             'roles' => 'required'
         ]);
-// update user
+// 21-update user
 // sync roles
         $data = [
             'name' => $request->name,
