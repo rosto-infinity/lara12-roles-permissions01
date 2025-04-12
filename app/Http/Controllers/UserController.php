@@ -49,7 +49,7 @@ class UserController extends Controller implements HasMiddleware
         })->get();
         return view('role-permission.user.index', ['users' => $users]);
     }
-// create and store method
+// 10create and store method
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
@@ -58,7 +58,7 @@ class UserController extends Controller implements HasMiddleware
 
     public function store(Request $request)
     {
-        // validate the request
+        // 11validate the request
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email',
