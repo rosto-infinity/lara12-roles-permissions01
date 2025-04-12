@@ -41,7 +41,7 @@ class UserController extends Controller implements HasMiddleware
     // 7-index method
     public function index(Request $request)
     {
-        // get all users
+        // 8get all users
         // $users = User::get();
         $search = $request->input('search');
         $users = User::when($search, function ($query, $search) {
