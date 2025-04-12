@@ -101,7 +101,7 @@ class UserController extends Controller implements HasMiddleware
             'roles' => 'required'
         ]);
 // 21-update user
-// sync roles
+// 22-sync roles
         $data = [
             'name' => $request->name,
             'email' => $request->email,
