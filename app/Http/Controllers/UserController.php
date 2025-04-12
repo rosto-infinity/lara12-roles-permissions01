@@ -118,7 +118,7 @@ class UserController extends Controller implements HasMiddleware
 
         return redirect('/users')->with('status','User Updated Successfully with roles');
     }
-// delete method
+// 23-delete method
     public function destroy($userId)
     {
         // find user by id and delete
