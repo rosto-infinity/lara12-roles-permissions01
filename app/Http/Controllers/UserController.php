@@ -121,7 +121,7 @@ class UserController extends Controller implements HasMiddleware
 // 23-delete method
     public function destroy($userId)
     {
-        // find user by id and delete
+        // 24-find user by id and delete
         $user = User::findOrFail($userId);
         $user->delete();
 
