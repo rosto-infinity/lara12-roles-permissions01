@@ -88,7 +88,7 @@ class PermissionController extends Controller implements HasMiddleware
 
         return redirect('permissions')->with('status','Permission Updated Successfully');
     }
-    // destroy method permission controller
+    // 2destroy method permission controller
     public function destroy($permissionId)
     {
         $permission = Permission::find($permissionId);
