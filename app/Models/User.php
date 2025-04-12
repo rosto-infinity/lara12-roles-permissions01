@@ -14,7 +14,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable, HasRoles;
 
     /**
-     * The attributes that are mass assignable.
+     * 26-The attributes that are mass assignable.
      *
      * @var list<string>
      */
