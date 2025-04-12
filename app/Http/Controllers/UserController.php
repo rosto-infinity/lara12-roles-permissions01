@@ -80,7 +80,7 @@ class UserController extends Controller implements HasMiddleware
     public function edit(User $user)
     {
         // 17--get all roles
-        // get user roles
+        // 18-get user roles
         // return view with user, roles and userRoles
         
         $roles = Role::pluck('name','name')->all();
