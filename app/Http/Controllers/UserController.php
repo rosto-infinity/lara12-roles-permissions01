@@ -94,7 +94,7 @@ class UserController extends Controller implements HasMiddleware
 
     public function update(Request $request, User $user)
     {
-        // validate the request
+        // 20-validate the request
         $request->validate([
             'name' => 'required|string|max:255',
             'password' => 'nullable|string|min:8|max:20',
