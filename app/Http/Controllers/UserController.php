@@ -58,11 +58,11 @@ class UserController extends Controller implements HasMiddleware
 
     public function store(Request $request)
     {
-        // 11-validate the request
+        // 11--validate the request
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|string|min:8|max:20',
+            'password' => 'required|string|min:8|max:25',
             'roles' => 'required'
         ]);
       // 13create user
@@ -71,12 +71,12 @@ class UserController extends Controller implements HasMiddleware
                         'email' => $request->email,
                         'password' => Hash::make($request->password),
                     ]);
-// 14sync roles
+// 14--sync roles
         $user->syncRoles($request->roles);
 
         return redirect('/users')->with('status','User created successfully with roles');
     }
-// edit and update method
+// 15edit and update method
     public function edit(User $user)
     {
         // get all roles
