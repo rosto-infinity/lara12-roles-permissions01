@@ -76,10 +76,10 @@ class UserController extends Controller implements HasMiddleware
 
         return redirect('/users')->with('status','User created successfully with roles');
     }
-// 15edit and update method
+// 15-edit and update method
     public function edit(User $user)
     {
-        // get all roles
+        // 17-get all roles
         // get user roles
         // return view with user, roles and userRoles
         
