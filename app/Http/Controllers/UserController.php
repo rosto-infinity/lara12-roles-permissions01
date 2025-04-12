@@ -79,7 +79,7 @@ class UserController extends Controller implements HasMiddleware
 // 15-edit and update method
     public function edit(User $user)
     {
-        // 17-get all roles
+        // 17--get all roles
         // get user roles
         // return view with user, roles and userRoles
         
